@@ -3,7 +3,7 @@ import "./Thread.scss";
 
 const Thread = (props) => {
   
-
+  const [commentsClicked, setCommentsClicked] = useState(false)
   const handleThumbsUpClick = (e) => {
     console.log("Thumbs up pressed!");
     e.stopPropagation();
@@ -15,13 +15,41 @@ const Thread = (props) => {
   };
 
   const handleCommentsClick = (e) => {
-    console.log("Thumbs down pressed!");
+    
+    setCommentsClicked(true)
     e.stopPropagation();
   };
 
   const handleClick = () => {
     console.log("bye");
   };
+
+  const Comment = (props) => {
+    return (<div>
+      <h1>{props.comment}</h1>
+      <p>{props.createdAt}</p>
+    </div>)
+  }
+
+  const Comments = (props) => {
+    const [comments, setComments] = useState([])
+    useEffect( () => {
+      fetch(`http://localhost:4003/posts/${props.id}/comments`).then(response => response.json()).then(data => setComments(data))
+    }, [commentsClicked])
+    console.log(props.id)
+    console.log(comments)
+
+
+
+
+
+    return (
+    <div>
+
+      {comments.map(comment => <Comment comment={comment.comment} createdAt={comment.createdAt} />)}
+
+    </div>)
+  }
 
   //Display time on post
   const displayTimePosted = (time) => {
@@ -58,10 +86,11 @@ const Thread = (props) => {
         <a
           style={{ fontSize: "20px", margin: "10px" }}
           onClick={handleCommentsClick}
-          href="/"
+          
         >
-          2 Comments
+          Comments
         </a>
+        {commentsClicked ? <Comments id={props.id} /> : null}
       </div>
     </div>
   );
