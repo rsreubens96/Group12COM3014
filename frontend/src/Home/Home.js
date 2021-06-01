@@ -24,6 +24,7 @@ const Home = () => {
       return (
         <li key={post._id}>
           <Thread
+            id={post._id}
             title={post.title}
             body={post.post}
             user={post.user}
