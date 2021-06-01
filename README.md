@@ -5,13 +5,11 @@ Group 12's web application for the COM3014 module.
 
 Install Docker Desktop (docker-compose comes built-in)
 
-go to terminal to where you installed app and do this
+go to terminal to where you installed app and do this (takes several minutes to install all services)
 
 - docker-compose up --build
 
-go on browser and type 
-- localhost:3000
-and it should run ok
+Open your browser and go to http://localhost:3000, and the web application should be up.
 
 How to stop services
 
