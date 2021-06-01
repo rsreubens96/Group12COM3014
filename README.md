@@ -14,8 +14,12 @@ docker-compose up --build
 ## How to stop services
 
 Ctrl+C (Cmd+C or whatever you do to kill a terminal process) then
-- docker-compose down
+```
+docker-compose down
+```
 
-How to start services
+## How to start services
 
-- docker-compose up
+```
+docker-compose up
+```
