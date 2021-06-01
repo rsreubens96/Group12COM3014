@@ -1,17 +1,18 @@
 # Group12COM3014
 Group 12's web application for the COM3014 module.
 
-# HOW TO RUN ON DOCKER
+# How to run the web application
 
-Install Docker Desktop (docker-compose comes built-in)
+1. Install Docker Desktop (docker-compose comes built-in)
 
-go to terminal to where you installed app and do this (takes several minutes to install all services)
+2. Open a terminal, navigate to the file that the project is installed in, and run:
 
 - docker-compose up --build
+- (might take several minutes to install)
 
-Open your browser and go to http://localhost:3000, and the web application should be up.
+3. Open your browser and go to http://localhost:3000, and the web application should be up.
 
-How to stop services
+## How to stop services
 
 Ctrl+C (Cmd+C or whatever you do to kill a terminal process) then
 - docker-compose down
